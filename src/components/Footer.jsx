@@ -1,0 +1,29 @@
+import FontAwesome from "./FontAwesome";
+
+function Footer() {
+  return (
+    <footer className="flex w-full items-end justify-between bg-blue-300 px-3 py-5 font-normal md:px-12">
+      <div className="">
+        <p className="text-xl lg:text-2xl">
+          &copy; <span>Khalil</span> <span>2025</span>
+        </p>
+      </div>
+      <div className="flex items-end">
+        <p className="text-xl capitalize lg:text-2xl">contact us: </p>
+        <ul className="ms-2 flex flex-row gap-2 text-sm">
+          <li>
+            <FontAwesome type="brands">facebook</FontAwesome>
+          </li>
+          <li>
+            <FontAwesome type="brands">twitter</FontAwesome>
+          </li>
+          <li>
+            <FontAwesome type="brands">instagram</FontAwesome>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

@@ -18,7 +18,7 @@ function Header() {
           alt="smartwatch"
           className="hidden lg:block lg:w-64"
         />
-        <img src="/public/banner/banner-image.png" alt="" />
+        <img src="/banner/banner-image.png" alt="" />
       </div>
     </header>
   );

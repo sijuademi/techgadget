@@ -5,7 +5,7 @@
       "name": "Wireless Noise Cancelling Headphones",
       "price": 299.99,
       "category": "Audio",
-      "image": "/public/headphones/one.png",
+      "image": "/headphones/one.png",
       "description": "Premium sound with active noise cancellation."
     },
     {
@@ -13,7 +13,7 @@
       "name": "Smart Fitness Watch",
       "price": 199.5,
       "category": "Wearables",
-      "image": "/public/smartwatch/one.png",
+      "image": "/smartwatch/one.png",
       "description": "Track your health and workouts in style."
     },
     {
@@ -21,7 +21,7 @@
       "name": "Ergonomic Mechanical Keyboard",
       "price": 120.0,
       "category": "Accessories",
-      "image": "/public/keyboard/one.png",
+      "image": "/keyboard/one.png",
       "description": "Clicky keys for the ultimate typing experience."
     },
     {
@@ -29,7 +29,7 @@
       "name": "4K Ultra HD Monitor",
       "price": 350.0,
       "category": "Electronics",
-      "image": "/public/monitor/one.png",
+      "image": "/monitor/one.png",
       "description": "Crystal clear display for work and gaming."
     },
     {
@@ -37,7 +37,7 @@
       "name": "Smart Fitness Watch",
       "price": 299.5,
       "category": "Wearables",
-      "image": "/public/smartwatch/two.png",
+      "image": "/smartwatch/two.png",
       "description": "Track your health and workouts in style."
     },
     {
@@ -45,7 +45,7 @@
       "name": "Wireless Noise Cancelling Headphones",
       "price": 299.99,
       "category": "Audio",
-      "image": "/public/headphones/five.png",
+      "image": "/headphones/five.png",
       "description": "Premium sound with active noise cancellation."
     },
     {
@@ -53,7 +53,7 @@
       "name": "Ergonomic Mechanical Keyboard",
       "price": 120.0,
       "category": "Accessories",
-      "image": "/public/keyboard/two.png",
+      "image": "/keyboard/two.png",
       "description": "Clicky keys for the ultimate typing experience."
     },
     {
@@ -61,7 +61,7 @@
       "name": "4K Ultra HD Monitor",
       "price": 350.0,
       "category": "Electronics",
-      "image": "/public/monitor/two.png",
+      "image": "/monitor/two.png",
       "description": "Crystal clear display for work and gaming."
     },
     {
@@ -69,7 +69,7 @@
       "name": "Smart Fitness Watch",
       "price": 109.5,
       "category": "Wearables",
-      "image": "/public/smartwatch/three.png",
+      "image": "/smartwatch/three.png",
       "description": "Track your health and workouts in style."
     },
     {
@@ -77,7 +77,7 @@
       "name": "Wireless Noise Cancelling Headphones",
       "price": 299.99,
       "category": "Audio",
-      "image": "/public/headphones/four.png",
+      "image": "/headphones/four.png",
       "description": "Premium sound with active noise cancellation."
     },
     {
@@ -85,7 +85,7 @@
       "name": "Smart Fitness Watch",
       "price": 399.5,
       "category": "Wearables",
-      "image": "/public/smartwatch/four.png",
+      "image": "/smartwatch/four.png",
       "description": "Track your health and workouts in style."
     },
     {
@@ -93,7 +93,7 @@
       "name": "4K Ultra HD Monitor",
       "price": 350.0,
       "category": "Electronics",
-      "image": "/public/monitor/three.png",
+      "image": "/monitor/three.png",
       "description": "Crystal clear display for work and gaming."
     },
     {
@@ -101,7 +101,7 @@
       "name": "Ergonomic Mechanical Keyboard",
       "price": 120.0,
       "category": "Accessories",
-      "image": "/public/keyboard/three.png",
+      "image": "/keyboard/three.png",
       "description": "Clicky keys for the ultimate typing experience."
     },
     {
@@ -109,7 +109,7 @@
       "name": "Samsung S8 plus",
       "price": 799.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/six.png",
+      "image": "/smartphone/six.png",
       "description": "Fast, flagship android phone with clean display."
     },
     {
@@ -117,7 +117,7 @@
       "name": "Smart Fitness Watch",
       "price": 199.5,
       "category": "Wearables",
-      "image": "/public/smartwatch/five.png",
+      "image": "/smartwatch/five.png",
       "description": "Track your health and workouts in style."
     },
     {
@@ -125,7 +125,7 @@
       "name": "Samsung S8 plus",
       "price": 799.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/seven.png",
+      "image": "/smartphone/seven.png",
       "description": "Fast, flagship android phone with clean display."
     },
     {
@@ -133,7 +133,7 @@
       "name": "iphone X",
       "price": 299.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/eigth.png",
+      "image": "/smartphone/eigth.png",
       "description": "Fast, flagship iphone with clean display."
     },
     {
@@ -141,7 +141,7 @@
       "name": "Samsung Galaxy S22 Ultra",
       "price": 1299.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/one.png",
+      "image": "/smartphone/one.png",
       "description": "Fast, flagship android phone with clean display and snapdragon processor."
     },
     {
@@ -149,7 +149,7 @@
       "name": "Wireless Noise Cancelling Headphones",
       "price": 299.99,
       "category": "Audio",
-      "image": "/public/headphones/three.png",
+      "image": "/headphones/three.png",
       "description": "Premium sound with active noise cancellation."
     },
     {
@@ -157,7 +157,7 @@
       "name": "4K Ultra HD Monitor",
       "price": 2999.0,
       "category": "Electronics",
-      "image": "/public/monitor/four.png",
+      "image": "/monitor/four.png",
       "description": "Crystal clear display for work and gaming."
     },
     {
@@ -165,7 +165,7 @@
       "name": "Samsung Note 10 plus",
       "price": 799.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/one.png",
+      "image": "/smartphone/one.png",
       "description": "Fast, flagship android phone with clean display."
     },
     {
@@ -173,7 +173,7 @@
       "name": "iphone 15 pro max",
       "price": 799.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/four.png",
+      "image": "/smartphone/four.png",
       "description": "Fast, flagship iphone with clean display."
     },
     {
@@ -181,7 +181,7 @@
       "name": "iphone 12 pro max",
       "price": 799.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/one.png",
+      "image": "/smartphone/one.png",
       "description": "Fast, flagship iphone with clean display."
     },
     {
@@ -189,7 +189,7 @@
       "name": "Smart Fitness Watch",
       "price": 99.5,
       "category": "Wearables",
-      "image": "/public/smartwatch/six.png",
+      "image": "/smartwatch/six.png",
       "description": "Track your health and workouts in style."
     },
     {
@@ -197,7 +197,7 @@
       "name": "Smart Fitness Watch",
       "price": 499.5,
       "category": "Wearables",
-      "image": "/public/smartwatch/seven.png",
+      "image": "/smartwatch/seven.png",
       "description": "Track your health and workouts in style."
     },
     {
@@ -205,7 +205,7 @@
       "name": "Wireless Noise Cancelling Headphones",
       "price": 299.99,
       "category": "Audio",
-      "image": "/public/headphones/two.png",
+      "image": "/headphones/two.png",
       "description": "Premium sound with active noise cancellation."
     },
     {
@@ -213,7 +213,7 @@
       "name": "Samsung Note 10 plus",
       "price": 799.0,
       "category": "Smartphone",
-      "image": "/public/smartphone/two.png",
+      "image": "/smartphone/two.png",
       "description": "Fast, flagship android phone with clean display."
     },
     {
@@ -221,7 +221,7 @@
       "name": "4K Ultra HD Monitor",
       "price": 2999.0,
       "category": "Electronics",
-      "image": "/public/monitor/four.png",
+      "image": "/monitor/four.png",
       "description": "Crystal clear display for work and gaming."
     },
     {
@@ -229,7 +229,7 @@
       "name": "4K 54\" Smart TV",
       "price": 2999.0,
       "category": "Electronics",
-      "image": "/public/tv/one.png",
+      "image": "/tv/one.png",
       "description": "Crystal clear display for home and gaming."
     },
     {
@@ -237,7 +237,7 @@
       "name": "4K 54\" Smart TV",
       "price": 2999.0,
       "category": "Electronics",
-      "image": "/public/tv/two.png",
+      "image": "/tv/two.png",
       "description": "Crystal clear display for home and gaming."
     },
     {
@@ -245,7 +245,7 @@
       "name": "4K 54\" Smart TV",
       "price": 2999.0,
       "category": "Electronics",
-      "image": "/public/tv/three.png",
+      "image": "/tv/three.png",
       "description": "Crystal clear display for home and gaming."
     },
     {
@@ -253,7 +253,7 @@
       "name": "8K 95\" Smart TV",
       "price": 7999.0,
       "category": "Electronics",
-      "image": "/public/tv/four.png",
+      "image": "/tv/four.png",
       "description": "Crystal clear display for home and gaming."
     },
     {
@@ -261,7 +261,7 @@
       "name": "4K 54\" Smart TV",
       "price": 1999.0,
       "category": "Electronics",
-      "image": "/public/tv/five.png",
+      "image": "/tv/five.png",
       "description": "Crystal clear display for home and gaming."
     },
     {
@@ -269,7 +269,7 @@
       "name": "4K 54\" Smart TV",
       "price": 2999.0,
       "category": "Electronics",
-      "image": "/public/tv/six.png",
+      "image": "/tv/six.png",
       "description": "Crystal clear display for home and gaming."
     },
     {
@@ -277,7 +277,7 @@
       "name": "8K 54\" Smart TV",
       "price": 9999.0,
       "category": "Electronics",
-      "image": "/public/tv/seven.png",
+      "image": "/tv/seven.png",
       "description": "Crystal clear display for home and gaming."
     },
     {
@@ -285,7 +285,7 @@
       "name": "Stainless steel wristwatch",
       "price": 10999.0,
       "category": "Accessories",
-      "image": "/public/wristwatch/one.png",
+      "image": "/wristwatch/one.png",
       "description": "Elegant design wristwatch with chrome plating."
     },
     {
@@ -293,7 +293,7 @@
       "name": "Stainless steel wristwatch",
       "price": 10999.0,
       "category": "Accessories",
-      "image": "/public/wristwatch/two.png",
+      "image": "/wristwatch/two.png",
       "description": "Elegant design wristwatch with chrome plating."
     }
   ],

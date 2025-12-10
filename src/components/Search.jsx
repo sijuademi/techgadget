@@ -2,7 +2,7 @@ import FontAwesome from "./FontAwesome";
 
 function Search() {
   return (
-    <div className="border-grey-200 my-2 items-center justify-between rounded-md border-2 border-solid lg:flex">
+    <div className="border-grey-200 hover my-2 items-center justify-between rounded-md border-2 border-solid lg:flex">
       <input
         type="text"
         placeholder="Search..."

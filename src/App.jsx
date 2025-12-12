@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="product" element={<ProductDetails />} />
+          <Route path="product/:id" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="login" element={<LoginPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />

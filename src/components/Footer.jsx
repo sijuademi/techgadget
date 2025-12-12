@@ -4,12 +4,14 @@ function Footer() {
   return (
     <footer className="flex w-full items-end justify-between bg-blue-300 px-3 py-5 font-normal md:px-12">
       <div className="">
-        <p className="text-xl lg:text-2xl">
+        <p className="text-lg md:text-xl lg:text-2xl">
           &copy; <span>Khalil</span> <span>2025</span>
         </p>
       </div>
       <div className="flex items-end">
-        <p className="text-xl capitalize lg:text-2xl">contact us: </p>
+        <p className="hidden text-xl capitalize md:inline-block lg:text-2xl">
+          contact us:{" "}
+        </p>
         <ul className="ms-2 flex flex-row gap-2 text-sm">
           <li>
             <FontAwesome type="brands">facebook</FontAwesome>

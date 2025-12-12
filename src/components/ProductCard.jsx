@@ -1,8 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 function ProductCard({ product }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
   return (
-    <div className="flex h-full w-full flex-col rounded-lg border-2 border-solid border-gray-400 p-4 transition-colors duration-300">
+    <div
+      onClick={handleCardClick}
+      className="flex h-full w-full flex-col rounded-lg border-2 border-solid border-gray-400 p-4 transition-colors duration-300"
+    >
       <img
         src={product.image}
         alt={product.name}

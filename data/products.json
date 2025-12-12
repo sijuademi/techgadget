@@ -177,7 +177,7 @@
       "description": "Fast, flagship iphone with clean display."
     },
     {
-      "id": 19,
+      "id": 36,
       "name": "iphone 12 pro max",
       "price": 799.0,
       "category": "Smartphone",
@@ -217,7 +217,7 @@
       "description": "Fast, flagship android phone with clean display."
     },
     {
-      "id": 19,
+      "id": 37,
       "name": "4K Ultra HD Monitor",
       "price": 2999.0,
       "category": "Electronics",

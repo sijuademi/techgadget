@@ -1,6 +1,6 @@
 function PageNotFound() {
   return (
-    <div className="font-heading h-[calc(100vh-8.82rem)] text-center text-xl font-bold">
+    <div className="text-center font-heading text-xl font-bold">
       Not Found:(
     </div>
   );

@@ -10,9 +10,9 @@ library.add(fas, far, fab);
 
 function FontAwesome({ children, type, size = "2x" }) {
   return (
-    <div>
+    <span>
       <FontAwesomeIcon icon={`fa-${type} fa-${children}`} size={`${size}`} />
-    </div>
+    </span>
   );
 }
 

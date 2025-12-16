@@ -7,7 +7,7 @@ import useFetchProducts from "../hooks/useFetchProducts";
 function Home() {
   const { isLoading } = useFetchProducts();
   return (
-    <div>
+    <div className="width">
       <Header />
       {isLoading ? <Loader /> : <Products />}
       {/* <Products /> */}

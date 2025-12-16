@@ -9,16 +9,18 @@ import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col">
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="product/:id" element={<ProductDetails />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="product/:id" element={<ProductDetails />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </main>
         <Footer />
       </BrowserRouter>
     </div>

@@ -2,7 +2,7 @@ import FontAwesome from "./FontAwesome";
 
 function Footer() {
   return (
-    <footer className="flex w-full items-end justify-between bg-blue-300 px-3 py-5 font-normal md:px-12">
+    <footer className="mt-auto flex w-full items-end justify-between bg-blue-300 px-3 py-5 font-normal md:px-12">
       <div className="">
         <p className="text-lg md:text-xl lg:text-2xl">
           &copy; <span>Khalil</span> <span>2025</span>

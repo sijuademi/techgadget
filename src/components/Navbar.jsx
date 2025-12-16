@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="sticky top-0 z-10 flex items-center justify-between bg-white px-4 py-3 md:justify-between md:space-x-12 md:px-12 lg:space-x-5 lg:px-6 xl:mx-0 xl:px-0">
+    <div className="sticky top-0 z-10 flex items-center justify-between border-b-2 border-gray-200 bg-white px-4 py-3 md:justify-between md:space-x-12 md:px-12 lg:space-x-5 lg:px-6 xl:mx-0 xl:px-0">
       <NavLink to="/">
         <Logo />
       </NavLink>
@@ -17,9 +17,12 @@ function Navbar() {
       <div className="hidden lg:block">
         <Search />
       </div>
-      <div className="text-blue-500">
+      <NavLink
+        to="/cart"
+        className="ease text-blue-500 transition-colors duration-300 hover:text-blue-200"
+      >
         <FontAwesome type="solid">cart-shopping</FontAwesome>
-      </div>
+      </NavLink>
       <Login />
     </div>
   );

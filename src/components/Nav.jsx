@@ -6,10 +6,28 @@ function Nav() {
     <nav className="w-full">
       <ul className="md:text-md w-full items-center justify-around p-0 md:flex lg:text-xl">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `transition-all duration-300 ${
+                isActive ? "border-b-2 border-blue-500 pb-1" : ""
+              }`
+            }
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/product">Shop</NavLink>
+          <NavLink
+            to="/product"
+            className={({ isActive }) =>
+              `transition-all duration-300 ${
+                isActive ? "border-b-2 border-blue-500 pb-1" : ""
+              }`
+            }
+          >
+            Shop
+          </NavLink>
         </li>
         <li>
           <button className="flex cursor-pointer items-center gap-1 hover:text-blue-600">

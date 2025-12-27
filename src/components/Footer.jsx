@@ -1,3 +1,8 @@
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import FontAwesome from "./FontAwesome";
 
 function Footer() {
@@ -14,13 +19,13 @@ function Footer() {
         </p>
         <ul className="ms-2 flex flex-row gap-2 text-sm">
           <li>
-            <FontAwesome type="brands">facebook</FontAwesome>
+            <FontAwesome icon={faFacebook} />
           </li>
           <li>
-            <FontAwesome type="brands">twitter</FontAwesome>
+            <FontAwesome icon={faTwitter} />
           </li>
           <li>
-            <FontAwesome type="brands">instagram</FontAwesome>
+            <FontAwesome icon={faInstagram} />
           </li>
         </ul>
       </div>

@@ -1,48 +1,34 @@
-function OrderSummary({ cart = [] }) {
-  // make sure cart is an array and price values are numbers
-  const total = cart.reduce((acc, cur) => acc + Number(cur?.price || 0), 0);
+function OrderSummary({ totalAmount = 0 }) {
   // Use Intl.NumberFormat for localized currency formatting
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
-  const formattedTotal = formatter.format(total);
 
-  const pipe =
-    (...functions) =>
-    (initialValue) =>
-      functions.reduce((acc, fn) => fn(acc), initialValue);
+  const shippingFee = Math.ceil((totalAmount / 100) * 25);
+  const calcTax = (amt) => (totalAmount > 1000 ? amt * 0.2 : amt * 0.1);
 
-  // Building blocks to use for composition
-  const double = (x) => 2 * x;
-  const triple = (x) => 3 * x;
-  const quadruple = (x) => 4 * x;
+  const tax = Math.ceil(calcTax(totalAmount));
 
-  // Composed functions for multiplication of specific values
-  const multiply6 = pipe(double, triple);
-  const multiply9 = pipe(triple, triple);
-  const multiply16 = pipe(quadruple, quadruple);
-  const multiply24 = pipe(double, triple, quadruple);
+  const totalPayable = Number(totalAmount) + tax + shippingFee;
+  const formattedTotal = formatter.format(totalPayable);
 
-  // Usage
-  console.log(multiply6(6)); // 36
-  multiply9(9); // 81
-  multiply16(16); // 256
-  multiply24(10); // 240
+  console.log(typeof tax, typeof shippingFee);
 
   return (
-    <div className="mb-8 w-min rounded-lg border-2 border-gray-200 px-3 md:w-full">
-      <h3 className="text-nowrap font-heading text-lg font-semibold capitalize tracking-wide md:text-xl">
+    <div className="mb-8 w-64 rounded-lg border-2 border-gray-200 px-3 md:w-full">
+      <h3 className="text-nowrap py-2 font-heading text-lg font-semibold capitalize tracking-wide md:text-xl">
         order summary
       </h3>
-      <div className="md:text-md flex justify-between border-t-2 border-gray-200 py-2 text-sm capitalize">
-        <p>subtotal</p> <p>a</p>
+      <div className="md:text-md flex justify-between border-t-2 border-gray-200 py-2 text-lg capitalize">
+        <p>subtotal</p> <p className="font-semibold">${totalAmount}</p>
       </div>
-      <div className="md:text-md flex justify-between border-t-2 border-gray-200 py-2 text-sm capitalize">
-        <p>shipping</p> <p>b</p>
+      <div className="md:text-md flex justify-between border-t-2 border-gray-200 py-2 text-lg capitalize">
+        <p>shipping</p>{" "}
+        <p className="font-semibold">${shippingFee.toFixed(2)}</p>
       </div>
-      <div className="md:text-md flex justify-between border-t-2 border-gray-200 py-2 text-sm capitalize">
-        <p>tax</p> <p>c</p>
+      <div className="md:text-md flex justify-between border-t-2 border-gray-200 py-2 text-lg capitalize">
+        <p>tax</p> <p className="font-semibold">${tax.toFixed(2)}</p>
       </div>
       <div className="flex justify-between border-t-2 border-gray-200 py-2 font-heading text-lg font-semibold capitalize md:text-xl">
         <p>total</p> <p>{formattedTotal}</p>

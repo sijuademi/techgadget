@@ -297,30 +297,5 @@
       "description": "Elegant design wristwatch with chrome plating."
     }
   ],
-  "cart": [
-    {
-      "id": 16,
-      "name": "Ergonomic Mechanical Keyboard",
-      "price": 120.0,
-      "category": "Accessories",
-      "image": "/keyboard/three.png",
-      "description": "Clicky keys for the ultimate typing experience."
-    },
-    {
-      "id": 24,
-      "name": "Samsung S8 plus",
-      "price": 799.0,
-      "category": "Smartphone",
-      "image": "/smartphone/six.png",
-      "description": "Fast, flagship android phone with clean display."
-    },
-    {
-      "id": 8,
-      "name": "Smart Fitness Watch",
-      "price": 199.5,
-      "category": "Wearables",
-      "image": "/smartwatch/five.png",
-      "description": "Track your health and workouts in style."
-    }
-  ]
+  "cart": []
 }

@@ -1,17 +1,33 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faCartShopping,
+  faMinus,
+  faPlus,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
-/* import all the icons in Free Solid, Free Regular, and Brands styles */
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+library.add(
+  faCartShopping,
+  faUser,
+  faMinus,
+  faPlus,
+  faTrash,
+  faFacebook,
+  faTwitter,
+  faInstagram,
+);
 
-library.add(fas, far, fab);
-
-function FontAwesome({ children, type, size = "2x" }) {
+function FontAwesome({ icon, size = "2x" }) {
   return (
     <span>
-      <FontAwesomeIcon icon={`fa-${type} fa-${children}`} size={`${size}`} />
+      <FontAwesomeIcon icon={icon} size={size} />
     </span>
   );
 }

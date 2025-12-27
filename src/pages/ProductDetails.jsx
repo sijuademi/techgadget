@@ -1,17 +1,25 @@
 import { useParams } from "react-router-dom";
-import useFetchProducts from "../hooks/useFetchProducts";
+
 import FontAwesome from "../components/FontAwesome";
 import Button from "../components/Button";
 import ProductCard from "../components/ProductCard";
 import StarRating from "../components/StarRating";
 import OrderNumber from "../components/OrderNumber";
+import { useFetchData } from "../hooks/useFetchData";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
+import { useState } from "react";
 
 function ProductDetails() {
+  const [orderNum, setOrderNum] = useState(1);
   // Get the product Id from the URL
   const { id } = useParams();
-  // Import product from our custom hook
-  const { products } = useFetchProducts();
-  // Sort for the specific product
+  // Fetch products from our custom hook
+  const { data: products } = useFetchData("products");
+
+  const dispatch = useDispatch();
+
+  // Find the specific product
   const product = products.find((p) => p.id === parseInt(id));
   console.log(product?.category);
 
@@ -61,7 +69,17 @@ function ProductDetails() {
     .filter((e) => e.category === product.category)
     .filter((e) => e.id !== product.id);
 
-  console.log(relatedProducts);
+  function handleAddToCart() {
+    dispatch(addToCart({ ...product, quantity: orderNum }));
+    setOrderNum(1);
+  }
+
+  function increaseOrderNum() {
+    setOrderNum((s) => s + 1);
+  }
+  function decreaseOrderNum() {
+    if (orderNum > 1) setOrderNum((s) => s - 1);
+  }
 
   return (
     <div className="width px-5 pb-12">
@@ -83,8 +101,16 @@ function ProductDetails() {
             {product.description}
           </p>
           <h4 className="my-2 text-lg font-medium md:text-2xl">Quantity</h4>
-          <OrderNumber />
-          <Button className="hover my-4 w-full rounded-lg bg-blue-500 py-2 text-center text-lg font-medium text-orange-50 md:py-3 md:text-2xl">
+          <OrderNumber
+            handleIncr={increaseOrderNum}
+            handleDecr={decreaseOrderNum}
+          >
+            {orderNum}
+          </OrderNumber>
+          <Button
+            className="hover my-4 w-full rounded-lg bg-blue-500 py-2 text-center text-lg font-medium text-orange-50 md:py-3 md:text-2xl"
+            onClick={handleAddToCart}
+          >
             Add to Cart
           </Button>
         </div>
@@ -97,21 +123,21 @@ function ProductDetails() {
               key={idx}
               src={src}
               alt={`${product.name} extra ${idx + 1}`}
-              className="h-16 w-16 cursor-pointer rounded object-cover md:h-32 md:w-32"
+              className="h-24 w-24 cursor-pointer rounded object-cover md:h-32 md:w-32"
               onError={(e) => (e.target.style.display = "none")}
             />
           ))}
         </div>
-        <div className="overflow-x-scroll md:basis-1/2">
-          <h1 className="text-md font-heading font-semibold capitalize md:text-xl">
+        <div className="mt-8 md:mt-0 md:basis-1/2 md:overflow-x-scroll">
+          <h1 className="font-heading text-xl font-semibold capitalize md:text-2xl">
             related products
           </h1>
-          <div className="mt-3 gap-3 md:grid md:grid-flow-col-dense">
+          <div className="mt-3 flex flex-col gap-3 md:grid md:grid-flow-col-dense">
             {relatedProducts.map((product) => (
               <ProductCard
                 product={product}
                 key={product.id}
-                className="mt-4 flex w-64 flex-col gap-3 rounded-lg border-2 border-solid border-gray-400 p-4 md:mt-0"
+                className="mt-4 flex w-full flex-col gap-3 rounded-lg border-2 border-solid border-gray-400 p-4 md:mt-0 md:w-72"
               />
             ))}
           </div>

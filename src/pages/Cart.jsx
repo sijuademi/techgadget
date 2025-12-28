@@ -1,11 +1,10 @@
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
 import OrderSummary from "../components/OrderSummary";
+import Button from "../components/Button";
 
 function Cart() {
   const { cartItems, totalAmount } = useSelector((store) => store);
-
-  console.log(cartItems);
 
   return (
     <div className="mx-6 pt-10 md:mx-12">
@@ -24,6 +23,11 @@ function Cart() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="mb-12 flex w-full justify-center md:mt-8 md:w-[70%]">
+        <Button className="hover mx-auto w-full max-w-96 rounded-xl bg-blue-500 p-3 py-2 text-xl font-semibold capitalize text-white">
+          checkout
+        </Button>
       </div>
     </div>
   );

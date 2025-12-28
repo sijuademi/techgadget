@@ -1,3 +1,4 @@
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import FontAwesome from "./FontAwesome";
 
 function Search() {
@@ -8,10 +9,8 @@ function Search() {
         placeholder="Search..."
         className="bg-transparent py-2 ps-2 text-lg outline-none"
       />
-      <div className="h-full self-end bg-gray-200 px-2 py-3">
-        <FontAwesome type="solid" size="lg">
-          magnifying-glass
-        </FontAwesome>
+      <div className="h-full self-end bg-gray-200 px-2 py-3 text-gray-400">
+        <FontAwesome icon={faMagnifyingGlass} size="lg" />
       </div>
     </div>
   );

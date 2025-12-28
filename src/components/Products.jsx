@@ -1,10 +1,20 @@
 import { useFetchData } from "../hooks/useFetchData";
 import Loader from "./Loader";
-
+import { useFilter } from "../context/FilterContext";
 import ProductCard from "./ProductCard";
 
 function Products() {
   const { data: products, isLoading, error } = useFetchData("products");
+  const { selectedCategory } = useFilter();
+
+  // Filter products based on selected category
+  const displayedProducts =
+    selectedCategory && products.length > 0
+      ? products.filter(
+          (product) =>
+            product.category.toLowerCase() === selectedCategory.toLowerCase(),
+        )
+      : products;
 
   return (
     <>
@@ -26,7 +36,7 @@ function Products() {
 
           {/* grid: 1 column mobile, 2 on md (tablet), 3 on lg (laptop) */}
           <div className="grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {products.map((product) => (
+            {displayedProducts.map((product) => (
               <ProductCard
                 product={product}
                 key={product.id}

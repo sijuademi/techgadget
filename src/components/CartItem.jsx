@@ -12,7 +12,7 @@ function CartItem({ item }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="justify-between border-b-2 border-gray-300 py-2 md:flex md:py-6">
+    <div className="justify-between border-b-2 border-gray-300 py-4 md:flex md:py-6">
       <div className="flex justify-between text-right md:justify-normal md:gap-6 md:text-left lg:gap-14">
         <img
           src={item.image}
@@ -20,7 +20,7 @@ function CartItem({ item }) {
           className="h-24 w-24 lg:h-32 lg:w-32"
         />
         <div className="flex flex-col justify-center gap-y-2 font-heading text-sm font-semibold tracking-wide md:text-base lg:text-lg">
-          <p>{item.name}</p>
+          <p className="ps-4 md:ps-0">{item.name}</p>
           <p>${item.price}</p>
         </div>
       </div>

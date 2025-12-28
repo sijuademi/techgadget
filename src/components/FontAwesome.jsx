@@ -5,6 +5,8 @@ import {
   faMinus,
   faPlus,
   faTrash,
+  faMagnifyingGlass,
+  faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -22,6 +24,8 @@ library.add(
   faFacebook,
   faTwitter,
   faInstagram,
+  faMagnifyingGlass,
+  faAngleDown,
 );
 
 function FontAwesome({ icon, size = "2x" }) {

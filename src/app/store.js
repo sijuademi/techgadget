@@ -3,7 +3,16 @@ import { thunk } from "redux-thunk";
 import cartReducer from "../features/cartSlice";
 
 // Load initial state from localStorage
-const savedState = localStorage.getItem("cartState");
+const savedState = (() => {
+  try {
+    const item = localStorage.getItem("cartState");
+    return item ? JSON.parse(item) : null;
+  } catch (error) {
+    console.error("Failed to lead cart from localStorage:", error);
+    return null;
+  }
+})();
+
 const preloadedState = savedState
   ? JSON.parse(savedState)
   : {

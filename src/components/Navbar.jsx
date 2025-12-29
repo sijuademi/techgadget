@@ -7,6 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useAuth } from "../context/AuthContext";
 import Button from "./Button";
+import { useCallback } from "react";
 
 function Navbar() {
   const { cartItems } = useSelector((store) => store);
@@ -14,16 +15,18 @@ function Navbar() {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  function handleCartClick(e) {
-    if (!isAuthenticated) {
-      e.preventDefault();
-      alert("Please log in to access your cart");
-      navigate("/login");
-    } else {
-      navigate("/cart");
-    }
-  }
-
+  const handleCartClick = useCallback(
+    (e) => {
+      if (!isAuthenticated) {
+        e.preventDefault();
+        alert("Please log in to access your cart");
+        navigate("/login");
+      } else {
+        navigate("/cart");
+      }
+    },
+    [isAuthenticated, navigate],
+  );
   return (
     <div className="sticky top-0 z-10 flex items-center justify-between border-b-2 border-gray-200 bg-white px-4 py-3 md:justify-between md:space-x-12 md:px-12 lg:space-x-5 lg:px-6 xl:mx-0 xl:px-0">
       <NavLink to="/">

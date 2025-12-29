@@ -9,14 +9,18 @@ export function SearchProvider({ children }) {
 
   const { data: products } = useFetchData("products");
 
+  function search() {
+    const searched = products.filter((product) =>
+      product.name.toLowerCase().includes(query),
+    );
+    setSearchedProducts([...searched]);
+    setQuery("");
+  }
+
   useEffect(() => {
     function handleSearch(event) {
       if (event.key === "Enter") {
-        const searched = products.filter((product) =>
-          product.name.toLowerCase().includes(query),
-        );
-        setSearchedProducts([...searched]);
-        setQuery("");
+        search();
       }
     }
 
@@ -32,9 +36,19 @@ export function SearchProvider({ children }) {
     setQuery("");
   }
 
+  function handleSearchClick() {
+    search();
+  }
+
   return (
     <SearchContext.Provider
-      value={{ query, setQuery, searchedProducts, clearSearch }}
+      value={{
+        query,
+        setQuery,
+        searchedProducts,
+        clearSearch,
+        handleSearchClick,
+      }}
     >
       {children}
     </SearchContext.Provider>

@@ -6,48 +6,42 @@ import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoginPage from "./pages/LoginPage";
-import { AuthProvider } from "./context/AuthContext";
-import { FilterProvider } from "./context/FilterContext";
+
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { lazy, Suspense } from "react";
 import Loader from "./components/Loader";
-import { SearchProvider } from "./context/SearchContext";
-
+import AppProviders from "./context/AppProviders";
 const Home = lazy(() => import("./pages/Home"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails"));
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col">
-      <AuthProvider>
-        <FilterProvider>
-          <SearchProvider>
-            <BrowserRouter>
-              <Navbar />
-              <main>
-                <Suspense fallback={<Loader />}>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
+      <AppProviders>
+        <BrowserRouter>
+          <Navbar />
+          <main>
+            <Suspense fallback={<Loader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
 
-                    <Route path="product/:id" element={<ProductDetails />} />
-                    <Route
-                      path="cart"
-                      element={
-                        <ProtectedRoute>
-                          <Cart />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route path="login" element={<LoginPage />} />
-                    <Route path="*" element={<PageNotFound />} />
-                  </Routes>
-                </Suspense>
-              </main>
-              <Footer />
-            </BrowserRouter>
-          </SearchProvider>
-        </FilterProvider>
-      </AuthProvider>
+                <Route path="product/:id" element={<ProductDetails />} />
+                <Route
+                  path="cart"
+                  element={
+                    <ProtectedRoute>
+                      <Cart />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </BrowserRouter>
+      </AppProviders>
     </div>
   );
 }

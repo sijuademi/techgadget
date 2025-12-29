@@ -6,6 +6,16 @@
   .hover {
     @apply transition-colors duration-300 hover:border-none hover:bg-transparent hover:text-blue-950 hover:ring hover:ring-blue-500 hover:ring-offset-1 focus:bg-transparent focus:text-blue-950 focus:ring-blue-500;
   }
+
+  /* Hide scrollbar while keeping scroll functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
   .loader {
     width: 45px;
     aspect-ratio: 0.75;

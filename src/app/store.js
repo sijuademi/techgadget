@@ -8,20 +8,18 @@ const savedState = (() => {
     const item = localStorage.getItem("cartState");
     return item ? JSON.parse(item) : null;
   } catch (error) {
-    console.error("Failed to lead cart from localStorage:", error);
+    console.error("Failed to load cart from localStorage:", error);
     return null;
   }
 })();
 
-const preloadedState = savedState
-  ? JSON.parse(savedState)
-  : {
-      cartItems: [],
-      totalAmount: 0,
-      status: "idle",
-      error: null,
-      quantity: 0,
-    };
+const preloadedState = savedState || {
+  cartItems: [],
+  totalAmount: 0,
+  status: "idle",
+  error: null,
+  quantity: 0,
+};
 
 const store = createStore(cartReducer, preloadedState, applyMiddleware(thunk));
 

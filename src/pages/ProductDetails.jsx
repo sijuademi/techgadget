@@ -117,7 +117,7 @@ function ProductDetails() {
       </div>
 
       <div className="mt-8 gap-8 md:flex">
-        <div className="mx-auto mt-4 flex gap-2 overflow-x-scroll md:mx-0 md:basis-1/2">
+        <div className="hide-scrollbar mx-auto mt-4 flex gap-2 overflow-x-scroll md:mx-0 md:basis-1/2">
           {extraImages.map((src, idx) => (
             <img
               key={idx}
@@ -128,7 +128,7 @@ function ProductDetails() {
             />
           ))}
         </div>
-        <div className="mt-8 md:mt-0 md:basis-1/2 md:overflow-x-scroll">
+        <div className="hide-scrollbar mt-8 md:mt-0 md:basis-1/2 md:overflow-x-scroll">
           <h1 className="font-heading text-xl font-semibold capitalize md:text-2xl">
             related products
           </h1>

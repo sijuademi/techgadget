@@ -19,8 +19,6 @@ function LoginPage() {
     if (email && password) login(email, password);
   }
 
-  console.log(isAuthenticated);
-
   useEffect(
     function () {
       if (isAuthenticated) navigate("/", { replace: true });

@@ -3,10 +3,12 @@ import FontAwesome from "./FontAwesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { useFetchData } from "../hooks/useFetchData";
 import { useFilter } from "../context/FilterContext";
+import { useSearch } from "../context/SearchContext";
 
 function CategoryDropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const { selectedCategory, setSelectedCategory } = useFilter();
+  const { clearSearch } = useSearch();
 
   const { data: products } = useFetchData("products");
 
@@ -16,11 +18,13 @@ function CategoryDropdown() {
 
   function handleCategoryClick(category) {
     setSelectedCategory(category);
+    clearSearch();
     setIsOpen(false);
   }
 
   function handleAllProducts() {
     setSelectedCategory(null);
+    clearSearch();
     setIsOpen(false);
   }
 
@@ -30,7 +34,6 @@ function CategoryDropdown() {
       <button
         onClick={() => {
           setIsOpen((s) => !s);
-          // TODO: Toggle dropdown open/close
         }}
         className="flex cursor-pointer items-center gap-1 hover:text-blue-600"
       >
@@ -50,7 +53,6 @@ function CategoryDropdown() {
                 all
               </button>
             </li>
-            {/* TODO: Map through categories */}
             {categories.map((category, index) => (
               <li key={index}>
                 <button

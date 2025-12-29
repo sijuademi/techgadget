@@ -15,7 +15,9 @@ function Cart() {
 
         <div className="basis-3/4">
           <h1 className="pb-3 font-heading text-lg font-bold capitalize tracking-wide md:text-3xl">
-            your shopping cart ({cartItems.length} items)
+            {cartItems.length < 1
+              ? "you're yet to add items to your cart"
+              : `your shopping cart (${cartItems.length} items)`}
           </h1>
           <div className="border-t-2 border-gray-300">
             {cartItems.map((item) => (

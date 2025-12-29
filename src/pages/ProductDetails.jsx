@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 
-import FontAwesome from "../components/FontAwesome";
 import Button from "../components/Button";
 import ProductCard from "../components/ProductCard";
 import StarRating from "../components/StarRating";
@@ -9,25 +8,26 @@ import { useFetchData } from "../hooks/useFetchData";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
 import { useState } from "react";
+import Loader from "../components/Loader";
 
 function ProductDetails() {
   const [orderNum, setOrderNum] = useState(1);
   // Get the product Id from the URL
   const { id } = useParams();
   // Fetch products from our custom hook
-  const { data: products } = useFetchData("products");
+  const { data: products, isLoading } = useFetchData("products");
 
   const dispatch = useDispatch();
 
   // Find the specific product
   const product = products.find((p) => p.id === parseInt(id));
-  console.log(product?.category);
 
+  if (isLoading) return <Loader />;
   if (!product) return <h2>No product found</h2>;
 
   let type = product.category.toLowerCase();
   let displayName = product.name.toLowerCase().split(" ");
-  console.log(displayName, type);
+
   switch (type) {
     case "wearables":
       if (displayName.includes("smart")) {

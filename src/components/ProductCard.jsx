@@ -2,26 +2,31 @@ import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
+import { memo, useCallback } from "react";
 
 function ProductCard({ product, className }) {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
-  const handleCardClick = () => {
+  const handleCardClick = useCallback(() => {
     navigate(`/product/${product.id}`);
-  };
+  }, [product.id, navigate]);
 
-  function handleAddToCart(e) {
-    e.stopPropagation();
-    dispatch(addToCart(product));
-  }
+  const handleAddToCart = useCallback(
+    (e) => {
+      e.stopPropagation();
+      dispatch(addToCart(product));
+    },
+    [product, dispatch],
+  );
 
   return (
     <div onClick={handleCardClick} className={className}>
       <img
         src={product.image}
         alt={product.name}
+        loading="lazy"
         className="mx-auto my-6 h-64 object-contain"
       />
 
@@ -40,4 +45,4 @@ function ProductCard({ product, className }) {
   );
 }
 
-export default ProductCard;
+export default memo(ProductCard);

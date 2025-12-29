@@ -13,8 +13,6 @@ function OrderSummary({ totalAmount = 0 }) {
   const totalPayable = Number(totalAmount) + tax + shippingFee;
   const formattedTotal = formatter.format(totalPayable);
 
-  console.log(typeof tax, typeof shippingFee);
-
   return (
     <div className="mb-8 w-64 rounded-lg border-2 border-gray-200 px-3 md:w-full">
       <h3 className="text-nowrap py-2 font-heading text-lg font-semibold capitalize tracking-wide md:text-xl">

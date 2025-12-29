@@ -2,19 +2,35 @@ import { useFetchData } from "../hooks/useFetchData";
 import Loader from "./Loader";
 import { useFilter } from "../context/FilterContext";
 import ProductCard from "./ProductCard";
+import { useMemo } from "react";
+import { useSearch } from "../context/SearchContext";
 
 function Products() {
   const { data: products, isLoading, error } = useFetchData("products");
   const { selectedCategory } = useFilter();
+  const { searchedProducts } = useSearch();
 
-  // Filter products based on selected category
-  const displayedProducts =
-    selectedCategory && products.length > 0
-      ? products.filter(
-          (product) =>
-            product.category.toLowerCase() === selectedCategory.toLowerCase(),
-        )
-      : products;
+  // Combine both search and category filters in one memoized calculation
+  const displayedProducts = useMemo(() => {
+    let filtered = products;
+
+    // Apply category filter first
+    if (selectedCategory && products.length > 0) {
+      filtered = filtered.filter(
+        (product) =>
+          product.category.toLowerCase() === selectedCategory.toLowerCase(),
+      );
+    }
+
+    // Apply search filter (takes precedence if search is active)
+    if (searchedProducts.length > 0) {
+      filtered = searchedProducts.filter((product) =>
+        filtered.some((p) => p.id === product.id),
+      );
+    }
+
+    return filtered;
+  }, [selectedCategory, products, searchedProducts]);
 
   return (
     <>
@@ -34,16 +50,26 @@ function Products() {
             featured products
           </h1>
 
-          {/* grid: 1 column mobile, 2 on md (tablet), 3 on lg (laptop) */}
-          <div className="grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {displayedProducts.map((product) => (
-              <ProductCard
-                product={product}
-                key={product.id}
-                className="flex h-full w-full flex-col rounded-lg border-2 border-solid border-gray-400 p-4"
-              />
-            ))}
-          </div>
+          {displayedProducts.length === 0 ? (
+            <div className="py-8 text-center">
+              <p className="text-lg text-gray-500">
+                {selectedCategory
+                  ? `No products found in ${selectedCategory}`
+                  : "No products found"}
+              </p>
+            </div>
+          ) : (
+            /* grid: 1 column mobile, 2 on md (tablet), 3 on lg (laptop) */
+            <div className="grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {displayedProducts.map((product) => (
+                <ProductCard
+                  product={product}
+                  key={product.id}
+                  className="flex h-full w-full flex-col rounded-lg border-2 border-solid border-gray-400 p-4"
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </>
